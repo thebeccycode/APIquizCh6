@@ -5,8 +5,8 @@ let question1 = [
 let choicesEl = document.querySelector("#choices");
 
 choicesEl.addEventListener("click", function(event){
-if (event.target.matches("button")){
-    event.target.getAttribute("data-index")
+if (event.target.matches("start")){
+    //event.target.getAttribute("data-index")
 }
 });
 
