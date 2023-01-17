@@ -9,15 +9,42 @@ let submit = document.querySelector("#submit");
 let feedback = document.querySelector("#feedback");
 
 
-let questions = [
-    { question: "what kind of animal are you?", answers: ["potato", "mammal", "fish", "dinosaur"], correctAnswer: 3 },
-    { question: "what is the last thing you ate?", answers: ["breakfast", "lunch", "dinner", "junk"], correctAnswer: 1 },
-    { question: "do you understand JavaScript?", answers: ["I've had better luck stapling scrambled eggs to the ceiling", "i am pretending i do to impress my peers", "of course i do my brain is a filofax", "not even remotely, pal"], correctAnswer: 0 }
+let questionsEl = [
+    {
+        question1: "what animal are you?",
+        answers: {
+            a: "cat",
+            b: "fish",
+            c: "horse",
+            d: "walrus"
+        },
+        correctAnswer:"b"
+    },
+    {
+        question2: "how many days are in a week?",
+        answers: {
+            a: "4",
+            b: "7",
+            c: "29",
+            d: "which week are we talking about?"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question3: "do you understand JavaScript?",
+        answers: {
+            a: "no",
+            b: "my brain is a motherboard that someone dropped in a vat of custard",
+            c: "no comment",
+            d: "yes"
+        },
+        correctAnswer: "b"
+    }
 ];
 
 let currentQuestion= 0;
 
-questionTitle.textContent= questions[currentQuestion].question
+questionTitle.textContent= questionsEl[currentQuestion].question
 
 
 choicesEl.addEventListener("click", function (event) {
@@ -27,4 +54,9 @@ choicesEl.addEventListener("click", function (event) {
     }
 });
 
-//need to link these questions up with html so that when the user clicks the button, these questions come up. 
+//oppposite of hide is active or start
+//render questions to the button
+// use id to put hide as a class
+
+//startScreen.setAttribute('class', 'hide')
+//questionsEl.removeAttribute('class')
