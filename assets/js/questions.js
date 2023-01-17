@@ -1,15 +1,15 @@
-let choicesEl = document.querySelector("#choices");
-let questionTitle = document.querySelector("#question-title");
-let startScreen = document.querySelector("#start-screen");
-let endScreen = document.querySelector("#end-screen");
-let questionPrompts = document.querySelector("#questions");
-let finalScore = document.querySelector("#final-score");
-let initials = document.querySelector("#initials");
-let submit = document.querySelector("#submit");
+let startButton = document.querySelector("#start");
+let choices = document.querySelector("#choices")
+let timer = document.querySelector("#time");
+let btna1 = document.querySelector("#a1");
+let btna2 = document.querySelector("#a2");
+let btna3 = document.querySelector("#a3");
 let feedback = document.querySelector("#feedback");
 
+let countdown = 90;
 
-let questionsEl = [
+
+let questions = [
     {
         question1: "what animal are you?",
         answers: {
@@ -18,7 +18,7 @@ let questionsEl = [
             c: "horse",
             d: "walrus"
         },
-        correctAnswer:"b"
+        correctAnswer: "b"
     },
     {
         question2: "how many days are in a week?",
@@ -42,21 +42,27 @@ let questionsEl = [
     }
 ];
 
-let currentQuestion= 0;
+let currentQuestion = 0;
+function printQuestion() {
+    document.querySelector("#question-title").textContent = questions[currentQuestion].question
+    document.querySelector("#answer1").textContent = questions[currentQuestion].answers[0]
+    document.querySelector("#answer2").textContent = questions[currentQuestion].answers[1]
+    document.querySelector("#answer3").textContent = questions[currentQuestion].answers[2]
+    document.querySelector("#answer4").textContent = questions[currentQuestion].answers[3]
+};
 
-questionTitle.textContent= questionsEl[currentQuestion].question
 
+startButton.addEventListener("click", function (event) {
+    console.log("click");
+    let revealQuestions = document.querySelector("#questions");
+}
+);
 
-choicesEl.addEventListener("click", function (event) {
+choices.addEventListener("click", function (event) {
     if (event.target.matches("button")) {
-        //event.target.getAttribute("data-index")
-    localStorage.setItem("choicesEl", choicesEl);
-    }
-});
-
-//oppposite of hide is active or start
-//render questions to the button
-// use id to put hide as a class
-
-//startScreen.setAttribute('class', 'hide')
-//questionsEl.removeAttribute('class')
+        const buttonId = event.target.getAttribute("id");
+        console.log(buttonId);
+        console.log(questions[0]).correctAnswer);
+if (buttonId === questions[0].correctAnswer) {
+    console.log("correct!");
+}
