@@ -9,7 +9,7 @@ let feedback = document.querySelector("#feedback");
 let countdown = 90;
 
 
-let questions = [
+let questionsArray = [
     {
         question1: "what animal are you?",
         answers: {
@@ -43,7 +43,7 @@ let questions = [
 ];
 
 let currentQuestion = 0;
-function printQuestion() {
+function printQuestionS() {
     document.querySelector("#question-title").textContent = questions[currentQuestion].question
     document.querySelector("#answer1").textContent = questions[currentQuestion].answers[0]
     document.querySelector("#answer2").textContent = questions[currentQuestion].answers[1]
@@ -53,16 +53,38 @@ function printQuestion() {
 
 
 startButton.addEventListener("click", function (event) {
-    console.log("click");
-    let revealQuestions = document.querySelector("#questions");
-}
-);
+    startQuiz()
+});
 
-choices.addEventListener("click", function (event) {
-    if (event.target.matches("button")) {
-        const buttonId = event.target.getAttribute("id");
-        console.log(buttonId);
-        console.log(questions[0]).correctAnswer);
-if (buttonId === questions[0].correctAnswer) {
-    console.log("correct!");
+function startQuiz(){
+    countdownTimer = 90;
+    userScore = 0;
+};
+
+
+// make a if statement to check if the answer is correct or not
+// if the answer is correct then move to the next question
+// if the answer is incorrect then subtract 10 seconds from the timer
+// if the answer is incorrect then move to the next question
+// if the answer is correct then move to the next question
+choicesEl.addEventListener("click", function(event){
+    //check if the user clicked on a button
+    if(event.target.matches("button")){
+        //get the index of the button
+        let index = event.target.getAttribute("data-index");
+        //check if the index is the correct answer
+        //if(){
+            //correct answer
+        
+            //check if we are at the end of the questions array
+            //if(){
+                //game over
+           // } else {
+                //render next question 
+            //}
+        //} else {
+            //wrong answer
+        //}
+    }
 }
+)
