@@ -1,4 +1,5 @@
 let startButton = document.querySelector("#start");
+let startScreen = document.querySelector("#start-screen");
 let choices = document.querySelector("#choices")
 let timer = document.querySelector("#time");
 let btna1 = document.querySelector("#a1");
@@ -43,7 +44,8 @@ let questionsArray = [
 ];
 
 let currentQuestion = 0;
-function printQuestionS() {
+
+function printQuestions() {
     document.querySelector("#question-title").textContent = questions[currentQuestion].question
     document.querySelector("#answer1").textContent = questions[currentQuestion].answers[0]
     document.querySelector("#answer2").textContent = questions[currentQuestion].answers[1]
@@ -51,40 +53,12 @@ function printQuestionS() {
     document.querySelector("#answer4").textContent = questions[currentQuestion].answers[3]
 };
 
+//when i click start quiz, the first question needs to appear
 
-startButton.addEventListener("click", function (event) {
-    startQuiz()
-});
+//then when the user selects the answer, depending on whether it is wrong or right, a message must pop up to say whether the user was correct or not, then the score needs to be logged in the highscores.js and html
 
-function startQuiz(){
-    countdownTimer = 90;
-    userScore = 0;
-};
+//then the quiz needs to replace the first question with the second
 
+//then this needs to repeat until quiz is finished
 
-// make a if statement to check if the answer is correct or not
-// if the answer is correct then move to the next question
-// if the answer is incorrect then subtract 10 seconds from the timer
-// if the answer is incorrect then move to the next question
-// if the answer is correct then move to the next question
-choicesEl.addEventListener("click", function(event){
-    //check if the user clicked on a button
-    if(event.target.matches("button")){
-        //get the index of the button
-        let index = event.target.getAttribute("data-index");
-        //check if the index is the correct answer
-        //if(){
-            //correct answer
-        
-            //check if we are at the end of the questions array
-            //if(){
-                //game over
-           // } else {
-                //render next question 
-            //}
-        //} else {
-            //wrong answer
-        //}
-    }
-}
-)
+//when quiz is finished, score must be shown e.g. "2 out of 5 correct"
