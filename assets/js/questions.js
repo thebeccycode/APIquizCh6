@@ -1,5 +1,6 @@
 let startButton = document.querySelector("#start");
 let startScreen = document.querySelector("#start-screen");
+let startQuiz = document.querySelector("#questions");
 let choices = document.querySelector("#choices")
 let timer = document.querySelector("#time");
 let btna1 = document.querySelector("#a1");
@@ -55,7 +56,19 @@ function printQuestions() {
 
 //when i click start quiz, the first question needs to appear
 
+startButton.addEventListener("click", () => {startQuiz})
+
+
+//startQuiz(){
+    startScreen.className = "hide";
+//};
+
+
+    
+
 //then when the user selects the answer, depending on whether it is wrong or right, a message must pop up to say whether the user was correct or not, then the score needs to be logged in the highscores.js and html
+
+
 
 //then the quiz needs to replace the first question with the second
 
